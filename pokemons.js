@@ -28,15 +28,6 @@ function getElement(element) {
 }
 
 //Usar o fetch para criar conexão com a API (uma alternativa seria o XMLHttpRequest())
-
-//PRIMEIRO EXEMPLO
-
-// fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
-//   .then(response => response.json()) //recebe a resposta da requisição e, por função, transforma em json
-//   .then(data => pokemon = datap)) //recebe essa resposta, e a imprime no console
-//   .catch(err => console.log(err)); //só é executado caso aconteça algum erro
-//No console agora terá informações sobre o pikachu
-
 // Função responsavel por fazer requisições para a API e inserir as respostas na variavel pokemo
 function requestPokeInfo(url, name) {
     fetch(url + name)
@@ -65,23 +56,38 @@ function createCard () {
       </div>`;
     return card;
   }
-  
+  //Template strings são envolvidas por acentos graves (` `) em vez de aspas simples ou duplas. Template strings podem possuir placeholders. Estes são indicados por um cifrão seguido de chaves (${expression}). As expressões nos placeholders, bem como o texto em volta delas são passados a uma função. A função padrão apenas concatena as partes em uma string única.  Se existir uma expressão precedendo a template string (função tag exemplo),  a template string é definida como "tagged template string". No caso, a expressão tag (geralmente uma função) é chamada pela template string processada, que você pode manipular antes de produzir o resultado.
+
+
   // Função que faz a chamada das principais funções e inicia o app
   function startApp(pokeName) {
     requestPokeInfo(baseUrl, pokeName);
   
     setTimeout(function () {
+      //Exibe uma mensagem caso o pokemon pesquisado não exista
+      if(pokemon.detail) {
+        erroMessage.style.display = 'block';
+        container.style.display = 'none';
+      }else{
+        erroMessage.style.display = 'none';
+        container.style.display = 'flex';
         container.innerHTML = createCard();
+      }
     }, 2000);
   }
   
 //=============== ADD EVENTS ===============//
-  searchButton.addEventListener('click', event => {
+searchButton.addEventListener('click', event => {
     event.preventDefault();
     pokeName = searchInput.value.toLowerCase();
     startApp(pokeName);
+    container.classList.add('fade');
+  
+    // Reseta o efeito fade removendo a classe fade
+    setTimeout(() => {
+      container.classList.remove('fade');
+    }, 3000);
   });
-
 
 
 

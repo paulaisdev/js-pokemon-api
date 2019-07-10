@@ -98,7 +98,7 @@ body {
   font-size: 1.5em;
 }
 
-.pokemon {
+.pokemon-container {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -109,7 +109,7 @@ body {
   color: white; 
 }
 
-.pokemon .pokemon-picture {
+.pokemon-container .pokemon-picture {
   width: 150px;
   display: flex;
   align-items: center;
@@ -121,12 +121,12 @@ body {
   margin-bottom: 38px;
 }
 
-.pokemon .pokemon-picture img {
+.pokemon-container .pokemon-picture img {
   width: 100%;
 }
 
 
-.pokemon .pokemon-info {
+.pokemon-container .pokemon-info {
   width: 100%;
   background-color: #163f5e;
   flex: 2;
