@@ -1,6 +1,6 @@
 # Projeto Javascript com integração API Pokemóns
 
-Para visualizar clique [aqui](https://itsalle.github.io/js-pokemon-api/)<br>
+Para visualizar clique <a href="https://itsalle.github.io/js-pokemon-api/" target="_blank">aqui</a><br>
 <img height="135" alt="Pikachu pulando e dançando" src="https://i.pinimg.com/originals/00/34/87/003487f3761dfa309aa7f2719c5e1eb0.gif">
 
 Esse projeto foi desenvolvido a partir [desse](https://crisgon.github.io/posts/Consumindo-uma-API-de-pokemon-com-Javascript/) tutorial.
